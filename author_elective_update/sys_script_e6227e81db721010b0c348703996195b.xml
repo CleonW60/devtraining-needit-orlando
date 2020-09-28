@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_58872_needit_needit</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>NeedIt When needed field date</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+/* Instantiate the NeedItUtils class.  Call the isDatePast method and pass 
+		 the u_when_needed value.  	 */
+	
+	var niutils = new NeedItUtils();
+	var isPast = niutils.isDatePast(current.u_when_needed);
+		
+	// If the isDatePast method returns true, the date is in the past.
+	if(isPast == true){
+		gs.addErrorMessage("When needed date cannot be in the past.  Your request has not been saved to the database.");
+		current.setAbortAction(true);
+	} 
+	
+	/* CHALLANGE :
+	Modify the Business Rule script to prevent users from submitting requests for today. You will find the scoped GlideDateTime API documentation on the developer site to be useful.
+	
+	
+	// If the isDateToday method returns true, the date is today.
+	if(isToday == true){
+		gs.addErrorMessage("When needed date cannot be today.  Your request has not been saved to the database.");
+		current.setAbortAction(true);*/
+
+	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-21 15:35:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e6227e81db721010b0c348703996195b</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>NeedIt When needed field date</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_e6227e81db721010b0c348703996195b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-08-31 14:48:30</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=e6227e81db721010b0c348703996195b"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>1e230cfddb9393806578f22ebf96196a</instance_id>
+        <instance_name>dev64884</instance_name>
+        <name>sys_script_e6227e81db721010b0c348703996195b</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_58872_needit_needit&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;NeedIt When needed field date&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+/* Instantiate the NeedItUtils class.  Call the isDatePast method and pass 
+		 the u_when_needed value.  	 */
+	
+	var niutils = new NeedItUtils();
+	var isPast = niutils.isDatePast(current.u_when_needed);
+		
+	// If the isDatePast method returns true, the date is in the past.
+	if(isPast == true){
+		gs.addErrorMessage("When needed date cannot be in the past.  Your request has not been saved to the database.");
+		current.setAbortAction(true);
+	} 
+	
+	/* CHALLANGE :
+	Modify the Business Rule script to prevent users from submitting requests for today. You will find the scoped GlideDateTime API documentation on the developer site to be useful.
+	
+	
+	// If the isDateToday method returns true, the date is today.
+	if(isToday == true){
+		gs.addErrorMessage("When needed date cannot be today.  Your request has not been saved to the database.");
+		current.setAbortAction(true);*/
+
+	
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-08-21 15:35:43&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e6227e81db721010b0c348703996195b&lt;/sys_id&gt;&lt;sys_mod_count&gt;34&lt;/sys_mod_count&gt;&lt;sys_name&gt;NeedIt When needed field date&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_e6227e81db721010b0c348703996195b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-08-31 14:48:30&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e6227e81db721010b0c348703996195b"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>582552725</payload_hash>
+        <record_name>NeedIt When needed field date</record_name>
+        <reverted_from/>
+        <source>eb5f6828db321010b0c34870399619bf</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-31 14:48:31</sys_created_on>
+        <sys_id>b8870ed8db4b1010b0c348703996190b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17444fdb3170000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-08-31 14:48:31</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>70870ed8e14b101021d88be7a7e8a50b</update_guid>
+        <update_guid_history>70870ed8e14b101021d88be7a7e8a50b:582552725,7ef6cad8b44b1010956864ce331c57e5:-913392766,42d58ad8564b101004c0089eafd07a53:335400894,b554ce58b84b101047dcfc88bd0798e1:-1936048290,c5e3c218774b1010775499eb389d09b5:335400894,f1038e58fe4b1010221410ceb0b47fdf:76305402,5bc20e18da4b1010a140fd30158b48af:-2007176294,63124658b84b1010b15f5356d32f7869:-2050720577,463082d4714b101058265b525d355300:-1755724261,f80042187e4b1010effdb147b1773819:-437354818,b94706c2e93210101600dc8a4e017312:-1741560684,3a264ac24c32101007372dfcfd50c765:-313457911,77a3d7c527b2101052cfea880c3a5582:-1421974121,36c25b8553b21010a572dfe301e2cb6e:-951585918,e4921f8590b210109a5d8bf8b4496661:1652329109,f922d785afb2101057e492a278cd01f4:-398911514,da411f4525b21010b9d30005769aa3f0:-1661868700,0c601745f4b21010eb3ac3856c036d09:-1412070635,acef0f8d747210104af4bfde01930d89:-1661868700,516fcf010fb21010db43888881096682:-790919806,93bf36c99d7210108d54207616eac7c8:-636840114,46affa896a721010a64cf420026ca9ea:1791581933,8c0fba89d072101016a2bc857f0cdae3:-640249858,d4aefa499e7210101fa0bd28d7518248:-293051477,903d3649ab7210102c23ff4e55b8afd4:-278231646,d78c36492f7210103c91adf276f0946c:1950007168,1b7bba0956721010a23595038e0a6620:513586223,b3eab6c56b721010d5638249a5bdfab9:-1128203459,960afac5017210107d675782da970fcb:-1324059250,4779b6c5be721010cbd5ccc27b011e03:542711218,1839b2c53772101048617af274c6709b:-1524572312,8e0932c57272101081b17673842dded9:-548528249,c298b2c168721010ecebf465a3c1fe07:-769722033,ba7332c17e721010360c89fe7dfab8be:-631151797,3262fa81e172101085a656d0299f8378:845931651</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-31 14:54:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>04b55f003c994599abd2aa9737cfd3a9</sys_id>
+        <sys_metadata>e6227e81db721010b0c348703996195b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt When needed field date</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent display_value="NeedIt">45007fcd0fa83200cd674f8ce1050ebc</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_script_e6227e81db721010b0c348703996195b</sys_update_name>
+        <sys_update_version display_value="sys_script_e6227e81db721010b0c348703996195b">b8870ed8db4b1010b0c348703996190b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-08-31 14:54:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
